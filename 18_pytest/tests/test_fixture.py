@@ -17,7 +17,6 @@ def test_main():
 
 class TestMain():
 
-
     def test_main(self):
         print('\n=======test 1======')
         assert 'stackoverflow' in 'ru.stackoverflow.com'

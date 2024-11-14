@@ -1,6 +1,7 @@
-from pytest import fixture, mark, fail
+from pytest import mark, fail
 
-class TestMain():
+
+class TestMain:
 
     @mark.blocker
     def test_main(self):

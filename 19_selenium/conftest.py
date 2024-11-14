@@ -8,7 +8,7 @@ from selenium.webdriver.firefox.service import Service as  FirefoxService
 @pytest.fixture(scope="session")
 def driver():
     options = FirefoxOptions()
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     driver = webdriver.Firefox(options=options, service=FirefoxService(GeckoDriverManager().install()))
     driver.implicitly_wait(10)
     driver.maximize_window()
@@ -16,3 +16,10 @@ def driver():
 
     driver.close()
     driver.quit()
+
+URL = 'https://www.youtube.com'
+
+@pytest.fixture(scope='function')
+def youtube(driver):
+    driver.get(URL)
+    yield driver

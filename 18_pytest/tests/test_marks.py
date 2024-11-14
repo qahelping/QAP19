@@ -1,5 +1,6 @@
 from pytest import fixture, mark, fail
 
+
 class TestMain():
 
     @mark.blocker
