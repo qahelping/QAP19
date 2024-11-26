@@ -5,7 +5,7 @@ class TestMain:
 
     @mark.blocker
     def test_main(self):
-        assert 'stackoverflow' in 'ru.stackoverflow.com'
+        assert "stackoverflow" in "ru.stackoverflow.com"
 
     @mark.blocker
     @mark.skip
@@ -15,7 +15,9 @@ class TestMain:
     @mark.critical
     @mark.xfail
     def test_minus(self, condition):
-        assert 123 - 14 == condition, f'Error in, expected 123-14 = {123 - 14}, but actual {condition}'
+        assert (
+            123 - 14 == condition
+        ), f"Error in, expected 123-14 = {123 - 14}, but actual {condition}"
         fail("error message")
 
     @mark.xfail
@@ -27,8 +29,8 @@ class TestMain:
         assert True
 
     def test_boolean(self):
-        assert bool('stackoverflow') == True
+        assert bool("stackoverflow") == True
 
     def test_str(self):
-        value = 'stackoverflow'
+        value = "stackoverflow"
         assert len(value) == 12

@@ -24,7 +24,7 @@ def test_minimize_window(driver: WebDriver):
     assert driver.title == "Google"
 
 
-@mark.parametrize('a,b', WINDOWS_SIZE)
+@mark.parametrize("a,b", WINDOWS_SIZE)
 def test_set_window_size(driver: WebDriver, a, b):
     driver.set_window_size(width=a, height=b)
     url = "https://www.google.com/"

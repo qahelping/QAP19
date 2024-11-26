@@ -26,7 +26,7 @@ def prompt(driver, text):
 
 
 def test_alert(browser_practice_automation):
-    browser_practice_automation.get('https://practice-automation.com/popups/')
+    browser_practice_automation.get("https://practice-automation.com/popups/")
     browser_practice_automation.find_element(By.ID, "prompt").click()
     time.sleep(10)
-    prompt(browser_practice_automation, 'hello world')
+    prompt(browser_practice_automation, "hello world")
