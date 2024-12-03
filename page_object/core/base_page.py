@@ -14,7 +14,7 @@ class BasePage:
         self.driver: WebDriver = driver
 
     @allure.step("Click on ${selector}")
-    def click(self, selector: str, force=False):
+    def click(self, selector: tuple[str, str], force=False):
         element = self.get_element(selector)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
         if force:
@@ -51,7 +51,7 @@ class BasePage:
 
     def save_screenshot(self, name):
         self.driver.save_screenshot(name)
-        allure.attach('screenshot', self.driver.get_screenshot_as_png(), type=AttachmentType.PNG)
+        allure.attach(self.driver.get_screenshot_as_png(), name='screenshot')
 
     #  selector = (By.ID, 'name')
     def get_text(self, selector):
